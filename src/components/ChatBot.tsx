@@ -1,3 +1,4 @@
+// Chatbot.tsx
 'use client';
 
 import {Box,Tooltip, Button, TextField, Typography, Paper, Stack, Icon, IconButton, Avatar} from'@mui/material';

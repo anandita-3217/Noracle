@@ -14,4 +14,4 @@ app.get("/no",async (req,res)=>{
     }
 });
 app.listen(5000,()=>console.log("proxy running on port 5000"));
-// Obsoltet code now
+// Obsolete code now

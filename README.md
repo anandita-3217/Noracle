@@ -98,11 +98,11 @@ no-chatbot/
 ├── package.json
 ├── next.config.ts
 ├── tsconfig.json
-├── proxy-server.js              # Express proxy server
+├── proxy-server.js              # Express proxy server - no longer in use
 ├── src/
 │   ├── app/
 │   │   ├── api/
-│   │   │   └── no/route.ts      # Next.js API route (alternative)
+│   │   │   └── no/route.ts      # Next.js API route 
 │   │   ├── layout.tsx
 │   │   └── page.tsx
 │   ├── components/
