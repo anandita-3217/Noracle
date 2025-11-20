@@ -480,15 +480,6 @@ export default function Chatbot(){
             >
               Noracle
             </Typography>
-            <Typography
-              variant="caption"
-              sx={{
-                color: '#999',
-                fontStyle: 'italic',
-              }}
-            >
-              The Bot That Says No {speechSupported ? '🎤' : '(Voice disabled)'}
-            </Typography>
           </Box>
         </Box>
 

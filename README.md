@@ -437,21 +437,10 @@ Install the Express proxy dependencies:
 npm install express cors node-fetch
 ```
 
----
 
-## 📋 Roadmap
-
-- [ ] Enhance chatbot visual design
-- [ ] Integrate `lib/api.ts` utility functions throughout the application
-- [ ] Implement voice-to-text and text-to-voice functionality
-- [ ] Add user approval workflow for voice submissions
 
 ---
 
 ## 📄 License
 
 This project is open source and available under the MIT License.
-
----
-
-**Built with ❌ by developers who appreciate a good "no."**

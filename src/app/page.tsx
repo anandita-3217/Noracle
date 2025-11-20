@@ -6,3 +6,6 @@ export default function Home() {
     <Chatbot/>
   );
 }
+// Error to be addressed.
+//  utterance.onerror = (event) => {
+// > 142 |       console.error('Speech synthesis error:', event);
