@@ -111,11 +111,51 @@ export default function Chatbot(){
   };
 
   // Text-to-Speech for bot messages
-  const speakText = (text: string, messageId: string) => {
+  // const speakText = (text: string, messageId: string) => {
+  //   if (!synthesisRef.current) {
+  //     alert('Text-to-speech not supported in your browser');
+  //     return;
+  //   }
+
+  //   // Stop any ongoing speech
+  //   if (isSpeaking) {
+  //     synthesisRef.current.cancel();
+  //     setIsSpeaking(null);
+  //     return;
+  //   }
+
+  //   const utterance = new SpeechSynthesisUtterance(text);
+  //   utterance.rate = 0.9; // Slightly slower for clarity
+  //   utterance.pitch = 1;
+  //   utterance.volume = 1;
+  //   utterance.lang = 'en-US';
+
+  //   utterance.onstart = () => {
+  //     setIsSpeaking(messageId);
+  //   };
+
+  //   utterance.onend = () => {
+  //     setIsSpeaking(null);
+  //   };
+
+  //   utterance.onerror = (event) => {
+  //     console.error('Speech synthesis error:', event);
+  //     setIsSpeaking(null);
+  //   };
+
+  //   synthesisRef.current.speak(utterance);
+  // };
+
+  const [speechError, setSpeechError] = useState<string | null>(null);
+
+const speakText = (text: string, messageId: string) => {
     if (!synthesisRef.current) {
       alert('Text-to-speech not supported in your browser');
       return;
     }
+
+    // Clear any previous errors
+    setSpeechError(null);
 
     // Stop any ongoing speech
     if (isSpeaking) {
@@ -125,7 +165,7 @@ export default function Chatbot(){
     }
 
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.rate = 0.9; // Slightly slower for clarity
+    utterance.rate = 0.9;
     utterance.pitch = 1;
     utterance.volume = 1;
     utterance.lang = 'en-US';
@@ -139,11 +179,24 @@ export default function Chatbot(){
     };
 
     utterance.onerror = (event) => {
-      console.error('Speech synthesis error:', event);
       setIsSpeaking(null);
+      
+      // Only show error to user for actual problems
+      if (event.error === 'network') {
+        setSpeechError('Network error - speech unavailable');
+      } else if (event.error === 'synthesis-failed' || event.error === 'synthesis-unavailable') {
+        setSpeechError('Speech synthesis unavailable');
+      }
+      // Silently handle interruptions and cancellations
     };
 
-    synthesisRef.current.speak(utterance);
+    try {
+      synthesisRef.current.speak(utterance);
+    } catch (error) {
+      console.error('Failed to start speech synthesis:', error);
+      setIsSpeaking(null);
+      setSpeechError('Could not start speech');
+    }
   };
 
 

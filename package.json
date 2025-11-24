@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.5",
+    "asdfjkl": "^0.0.7",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "framer-motion": "^12.23.24",
