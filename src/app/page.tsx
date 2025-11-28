@@ -1,11 +1,17 @@
-import Image from "next/image";
+// import Image from "next/image";
+// import Chatbot from "@/components/ChatBot";
+// import NextJSRoutingGuide from "@/components/NextJSServerArch";
+// export default function Home() {
+//   return (
+//     <>
+//     <Chatbot/>
+//     <NextJSRoutingGuide/>
+//     </>
+//     );
+// }
+// app/page.tsx
 import Chatbot from "@/components/ChatBot";
 
 export default function Home() {
-  return (
-    <Chatbot/>
-  );
+  return <Chatbot />;
 }
-// Error to be addressed.
-//  utterance.onerror = (event) => {
-// > 142 |       console.error('Speech synthesis error:', event);
