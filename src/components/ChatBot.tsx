@@ -489,7 +489,7 @@ const speakText = (text: string, messageId: string) => {
   //   </Box>
   // );
   return (
-    <Box className="min-h-screen bg-gradient-to-br from-black to-red-950 flex items-center justify-center p-4">
+    <Box className="min-h-screen bg-linear-to-br from-black to-red-950 flex items-center justify-center p-4">
       <Paper
         elevation={24}
         className="w-full max-w-4xl h-[90vh] max-h-[800px] flex flex-col overflow-hidden"
